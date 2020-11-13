@@ -1,0 +1,4 @@
+DeviceNetworkInfo | join DeviceTvmSoftwareInventoryVulnerabilities on DeviceId, $left.DeviceId == $right.DeviceId
+| where isnotempty(IPv4Dhcp)
+| where SoftwareVendor contains "INSERT SOFTWARE VENDOR NAME"
+| project Timestamp, DeviceId, DeviceName, IPv4Dhcp, OSVersion, OSPlatform, SoftwareVersion
